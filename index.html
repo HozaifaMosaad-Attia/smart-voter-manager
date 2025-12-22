@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>سجل أرقامي - أسهل وسيلة لحفظ الأسماء</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="perant-one">
+                <h1>سجل الاسماء والارقام</h1>
+            </div>
+            <div class="perant-two" id="inputs-container">
+                <div class="div-name">
+                    <input type="text" id="name" placeholder="اسم الشخص">
+                    <input type="tel" id="tel" placeholder="رقم الشخص">
+                </div>
+                <div class="div-search">
+                    <input type="text" id="location" placeholder="الموقع الانتخابى">
+                    <input onkeyup="searchData(this.value)" type="search" id="search" placeholder="ابحث بالاسم">
+                </div>
+                <button type="submit" id="submit">حفظ</button>
+            </div>
+            <div class="perant-table">
+                <div class="number-one number"></div>
+                <table id="table-one">
+                    <thead>
+                        <tr>
+                            <th>رقم</th>
+                            <th>اسم الشخص</th>
+                            <th>رقم الهاتف</th>
+                            <th>الموقع الخاص به</th>
+                            <th>الحاله (دخل / لم يدخل)</th>
+                            <th>تعديل</th>
+                            <th>حذف</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody-one"></tbody>
+                </table>
+                <div class="number-two number"></div>
+                <table id="table-two">
+                    <thead>
+                        <tr>
+                            <th>رقم</th>
+                            <th>اسم الشخص</th>
+                            <th>رقم الهاتف</th>
+                            <th>الموقع الخاص به</th>
+                            <th>الإجراءات</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody-two"></tbody>
+                </table>
+                <div class="number-three number"></div>
+                <table id="table-three">
+                    <thead>
+                        <tr>
+                            <th>رقم</th>
+                            <th>اسم الشخص</th>
+                            <th>رقم الهاتف</th>
+                            <th>الموقع الخاص به</th>
+                            <th>الإجراءات</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody-three"></tbody>
+                </table>
+            </div>
+        </div>
+        <script src="./main.js"></script>
+    </body>
+</html>
