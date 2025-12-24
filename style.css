@@ -4,6 +4,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+html {
+    scroll-behavior: smooth;
+}
 body {
     font-family: 'Cairo', sans-serif;
     direction: rtl; 
@@ -121,15 +124,16 @@ table th, table td {
     font-weight: bold;
     transition: 0.3s;
 }
-
-.update, .update-two { background-color: #2196F3; color: white; }
-.delete { background-color: #f44336; color: white; }
-
+.update, .update-two { 
+    background-color: #2196F3; color: white; 
+}
+.delete {
+    background-color: #f44336; color: white;
+}
 .update:hover, .update-two:hover, .delete:hover {
     opacity: 0.8;
     transform: scale(1.05);
 }
-
 .container .call-btn {
     display: inline-block;
     background-color: #2ecc71;
@@ -139,4 +143,36 @@ table th, table td {
     text-decoration: none; 
     font-size: 13px;
     margin-right: 10px;
+}
+.up {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 45px;
+    height: 45px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: 0.3s;
+    opacity: 0; 
+    pointer-events: none; 
+}
+.up::after {
+    content: "↑";
+    font-size: 20px;
+    font-weight: bold;
+}
+.up.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+.up:hover {
+    background-color: #0056b3;
+    transform: translateY(-5px);
 }
