@@ -76,8 +76,8 @@ function renderTables(dataArray) {
                 <td>${dataArray[i].tel} <a href="tel:${dataArray[i].tel}" class="call-btn"><i class="fa-solid fa-phone"></i></a></td>
                 <td>${dataArray[i].locations}</td>
                 <td>
-                    <label><input type="radio" onclick="setEntered(${originalIndex})"> دخل</label>
-                    <label><input type="radio" onclick="setNotEntered(${originalIndex})"> لم يدخل</label>
+                    <label class="label-one"><input type="radio" onclick="setEntered(${originalIndex})"> دخل</label>
+                    <label class="label-two"><input type="radio" onclick="setNotEntered(${originalIndex})"> لم يدخل</label>
                 </td>
                 <td><button class="update" onclick="updateData(${originalIndex})"><i class="fa-solid fa-pen-to-square"></i> تعديل</button></td>
                 <td><button class="delete" onclick="deleteData(${originalIndex})"><i class="fa-solid fa-trash-can"></i> حذف</button></td>
@@ -150,12 +150,17 @@ function updateData(i) {
 showData();
 
 let upBtn = document.querySelector(".up");
+let scrollLine = document.querySelector(".scroll-line");
+
 window.onscroll = function () {
     if (window.scrollY >= 800) {
         upBtn.classList.add("show");
     } else {
         upBtn.classList.remove("show");
     }
+    let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    let scrolled = (window.scrollY / height) * 100;
+    scrollLine.style.width = `${scrolled}%`;
 };
 
 upBtn.onclick = function () {

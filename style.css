@@ -12,6 +12,16 @@ body {
     direction: rtl; 
     text-align: center;
 }
+.scroll-line {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%; 
+    height: 5px;
+    background-color: #2ecc71; 
+    z-index: 9999;
+    transition: width 0.1s linear;
+}
 .container {
     width: 80%;
     margin-left: auto;
@@ -112,8 +122,6 @@ table th, table td {
     text-align: center;
     vertical-align: middle;
 }
-
-/* تنسيق أزرار التعديل والحذف في الجداول */
 .update, .delete, .update-two {
     padding: 8px 15px;
     margin: 2px 5px;
@@ -175,4 +183,38 @@ table th, table td {
 .up:hover {
     background-color: #0056b3;
     transform: translateY(-5px);
+}
+.container .label-one, 
+.container .label-two {
+    width: 75px; 
+    display: inline-block;
+    border-radius: 6px;
+    padding: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    user-select: none;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+}
+.container .label-one {
+    background-color: #11ab11b8;
+    margin-left: 5px;
+}
+.container .label-two {
+    background-color: #df0d0da6; 
+}
+.label-one input, 
+.label-two input {
+    display: none;
+}
+.label-one:has(input:checked) {
+    background-color: #11ab11;
+    box-shadow: 0 0 8px #11ab11;
+    transform: scale(1.05);
+}
+.label-two:has(input:checked) {
+    background-color: #df0d0d; 
+    box-shadow: 0 0 8px #df0d0d;
+    transform: scale(1.05);
 }
